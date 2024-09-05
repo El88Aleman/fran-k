@@ -1,0 +1,53 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.imgTitulo {
+  margin: 100px;
+}
+.imgTitulo img {
+  transform-style: preserve-3d;
+  animation: rotar 8s linear infinite;
+}
+.home .imgTitulo {
+  transform-style: preserve-3d;
+  animation: rotar 8s linear infinite;
+  transform: rotateY(calc((var(--position) - 1)));
+}
+@keyframes rotar {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+.slider-container {
+  margin: 0 auto;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  cursor: grab;
+  overflow-x: visible;
+}
+.item {
+  min-height: 650px;
+  min-width: 450px;
+  padding: 30px;
+  transition: transform 0.3s ease;
+}
+
+.item img {
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-radius: 5px;
+  transition: border-radius 0.5s ease;
+}

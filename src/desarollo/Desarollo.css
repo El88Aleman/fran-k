@@ -1,0 +1,9 @@
+.containerDesarrollo {
+  background-image: url("https://res.cloudinary.com/dfcnmxndf/image/upload/v1725367898/Fran-K/ayc61elhk3sxisspdktb.jpg");
+  background-color: black;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
