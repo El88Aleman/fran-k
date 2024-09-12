@@ -1,51 +1,59 @@
 import { Image } from "react-bootstrap";
-import Desarrollo from "../desarollo/Desarrollo";
-import { images } from "./home";
-import { motion } from "framer-motion";
+import { imagenes } from "./home.js";
 import "./Home.css";
 import { useState } from "react";
+import { BsChevronCompactRight } from "react-icons/bs";
+import { BsChevronCompactLeft } from "react-icons/bs";
 
 const Home = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [imagenActual, setImagenActual] = useState(0);
+  const cantidad = imagenes?.length;
 
-  const handleImageClick = (imageId) => {
-    // Si la imagen ya está seleccionada, desmarcarla; de lo contrario, seleccionarla
-    setSelectedImage((prev) => (prev === imageId ? null : imageId));
+  if (!Array.isArray(imagenes) || cantidad === 0) return;
+
+  const siguienteImagen = () => {
+    setImagenActual(
+      (imagenActual === cantidad - 1 ? 0 : imagenActual + 1) % cantidad
+    );
+  };
+
+  const anteriorImagen = () => {
+    setImagenActual(
+      (imagenActual === 0 ? cantidad - 1 : imagenActual - 1) % cantidad
+    );
   };
 
   return (
     <div className="home">
       <div className="imgTitulo">
-        <Image
-          src="https://res.cloudinary.com/dfcnmxndf/image/upload/v1725371632/Fran-K/kqjr4ohmjdrrbizuk6np.png"
-          width="325px"
-          height="60px"
-        />
+        <Image src="https://res.cloudinary.com/dfcnmxndf/image/upload/v1726064433/Fran-K/plcru9w9gjtttwl6bowg.png" />
       </div>
-      <motion.div className="slider-container" layout>
-        <motion.div
-          className="slider"
-          drag="x"
-          dragConstraints={{ right: 0, left: -1650 }}
-        >
-          {images.map((image) => (
-            <motion.div
-              key={image.id}
-              className="item"
-              onClick={() => handleImageClick(image.id)} // Controlar la selección
-              animate={{
-                scale: selectedImage === image.id ? 1.5 : 1,
-              }}
-              layout // Animar cambios de diseño
-              transition={{ duration: 0.5 }}
-              style={{ cursor: "pointer", borderRadius: "5px" }}
+      <div className="containerSlider">
+        <div className="buttonAnterior" onClick={anteriorImagen}>
+          <BsChevronCompactLeft className="prevIcon" />
+        </div>
+        <div className="slider">
+          {imagenes.map((imagen) => (
+            <div
+              key={imagen.id}
+              className={`slide ${
+                imagenActual === imagen.id
+                  ? "active"
+                  : imagen.id === (imagenActual + 1) % cantidad
+                  ? "next"
+                  : imagen.id === (imagenActual - 1 + cantidad) % cantidad
+                  ? "prev"
+                  : ""
+              }`}
             >
-              <img src={image.url} />
-            </motion.div>
+              <img src={imagen.url} alt={`Imagen ${imagen.id}`} />
+            </div>
           ))}
-        </motion.div>
-      </motion.div>
-      <Desarrollo />
+        </div>
+        <div className="buttonSiguiente" onClick={siguienteImagen}>
+          <BsChevronCompactRight className="nextIcon" />
+        </div>
+      </div>
     </div>
   );
 };

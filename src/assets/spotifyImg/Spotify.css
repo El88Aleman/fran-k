@@ -1,0 +1,15 @@
+.spotify-svg {
+  width: 500px;
+  height: 200px;
+}
+@media (max-width: 768px) {
+  .spotify-svg {
+    width: 300px;
+    height: 75px;
+  }
+}
+
+svg.spotify-svg {
+  max-width: 100%;
+  height: auto;
+}

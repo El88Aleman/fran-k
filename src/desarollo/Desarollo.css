@@ -1,9 +1,112 @@
 .containerDesarrollo {
-  background-image: url("https://res.cloudinary.com/dfcnmxndf/image/upload/v1725367898/Fran-K/ayc61elhk3sxisspdktb.jpg");
-  background-color: black;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.containerImagenDesarrollo1,
+.containerImagenDesarrollo2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10px;
+}
+.containerImagenDesarrollo2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+.containerImagenDesarrollo3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.imgDesarrollo {
+  height: 450px;
+  width: 350px;
+  border-radius: 5px;
+}
+.imgDesarrollo2 {
+  position: relative;
+  bottom: 70px;
+  left: 210px;
+  z-index: 2;
+}
+.imgDesarrollo4 {
+  position: relative;
+  bottom: 70px;
+  right: 210px;
+  z-index: 2;
+}
+.imgDesarrollo5 {
+  width: 650px;
+  height: 650px;
+}
+.textoDesarrollo1 {
+  position: relative;
+  color: white;
+  bottom: 800px;
+  left: 370px;
+  width: 600px;
+  margin-left: 30px;
+  font-family: "Roboto Regular";
+}
+.textoDesarrollo2 {
+  position: relative;
+  color: white;
+  bottom: 800px;
+  right: 370px;
+  width: 600px;
+  margin-right: 30px;
+  font-family: "Roboto Regular";
+}
+.textoDesarrollo3 {
+  text-align: center;
+  color: white;
+  width: 900px;
+  margin-bottom: 30px;
+  font-family: "Roboto Regular";
+}
+@font-face {
+  font-family: "Roboto Regular";
+  src: url(../assets/tipografias/RobotoRegular.ttf);
+}
+
+@media (max-width: 768px) {
+  .textoDesarrollo1,
+  .textoDesarrollo2,
+  .textoDesarrollo3 {
+    width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .imgDesarrollo {
+    height: 350px;
+    width: 250px;
+  }
+  .imgDesarrollo5 {
+    width: 450px;
+    height: 450px;
+  }
+  .textoDesarrollo1,
+  .textoDesarrollo2,
+  .textoDesarrollo3 {
+    width: 300px;
+  }
+  .textoDesarrollo1,
+  .textoDesarrollo2 {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .textoDesarrollo3 {
+    margin-top: 70px;
+  }
 }
