@@ -1,11 +1,11 @@
 import { Image } from "react-bootstrap";
 import { imagenes } from "./home.js";
-import "./Home.css";
+import "./Principio.css";
 import { useState } from "react";
 import { BsChevronCompactRight } from "react-icons/bs";
 import { BsChevronCompactLeft } from "react-icons/bs";
 
-const Home = () => {
+const Principio = () => {
   const [imagenActual, setImagenActual] = useState(0);
   const cantidad = imagenes?.length;
 
@@ -24,7 +24,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <div className="principio">
       <div className="imgTitulo">
         <Image src="https://res.cloudinary.com/dfcnmxndf/image/upload/v1726064433/Fran-K/plcru9w9gjtttwl6bowg.png" />
       </div>
@@ -58,4 +58,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Principio;

@@ -1,11 +1,11 @@
-import "./Footer.css";
+import "./Final.css";
 import { FaSpotify, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { canciones } from "./musica";
 import Spotify from "../assets/spotifyImg/Spotify";
 import { AiOutlinePlus } from "react-icons/ai";
 import { useState } from "react";
 
-const Footer = () => {
+const Final = () => {
   const [showAll, setShowAll] = useState(false);
 
   const handleShowAll = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="containerFooter">
+    <div className="containerFinal">
       <div className="spotify">
         <Spotify />
         <img
@@ -104,4 +104,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Final;

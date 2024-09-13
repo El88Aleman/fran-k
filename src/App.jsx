@@ -1,13 +1,13 @@
 import Desarrollo from "./desarollo/Desarrollo.jsx";
-import Footer from "./footer/Footer.jsx";
-import Home from "./home/Home.jsx";
+import Final from "./footer/Final.jsx";
+import Principio from "./home/Principio.jsx";
 
 function App() {
   return (
     <>
-      <Home />
+      <Principio />
       <Desarrollo />
-      <Footer />
+      <Final />
     </>
   );
 }
